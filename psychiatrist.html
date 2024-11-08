@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Psychiatrists</title>
+    <link rel="stylesheet" href="style.css"> <!-- External CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f7fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        .psychiatrists-section {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #2575fc;
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .doctor-card {
+            display: flex;
+            align-items: center;
+            background-color: #fff;
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .doctor-card img {
+            border-radius: 50%;
+            margin-right: 20px;
+            width: 120px;
+            height: 120px;
+        }
+
+        .doctor-info {
+            flex-grow: 1;
+        }
+
+        .doctor-info p {
+            margin: 5px 0;
+            font-size: 18px;
+        }
+
+        .doctor-name {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .book-appointment {
+            background-color: #2575fc;
+            color: white;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .book-appointment:hover {
+            background-color: #2a5298;
+        }
+    </style>
+</head>
+<body>
+    <section class="psychiatrists-section">
+        <h1>All Psychiatrists</h1>
+
+
+        <div class="doctor-card">
+            <img src="img/doctor1.jpeg" alt="Doctor 1">
+            <div class="doctor-info">
+                <p class="doctor-name">Dr. Usman Yousuf</p>
+                <p>Specialization: General Psychiatrists</p>
+                <p>Availability: 5.0 ★ Available</p>
+            </div>
+            <button class="book-appointment" onclick="window.location.href='appointment.html'">Book an appointment</button>
+        </div>
+
+        <div class="doctor-card">
+            <img src="img/doctor2.jpeg" alt="Doctor 2">
+            <div class="doctor-info">
+                <p class="doctor-name">Dr. Angelia</p>
+                <p>Specialization: Addiction Psychiatrists</p>
+                <p>Availability: 5.0 ★ Available</p>
+            </div>
+            <button class="book-appointment" onclick="window.location.href='appointment.html'">Book an appointment</button>
+        </div>
+
+        <div class="doctor-card">
+            <img src="img/doctor3.jpeg" alt="Doctor 3">
+            <div class="doctor-info">
+                <p class="doctor-name">Dr. Jen</p>
+                <p>Specialization: General Psychiatrists</p>
+                <p>Availability: 5.0 ★ Available</p>
+            </div>
+            <button class="book-appointment" onclick="window.location.href='appointment.html'">Book an appointment</button>
+        </div>
+
+
+        <div class="doctor-card">
+            <img src="img/doctor4.jpeg" alt="Doctor 4">
+            <div class="doctor-info">
+                <p class="doctor-name">Dr. Andrew</p>
+                <p>Specialization: Clinical Psychiatrists</p>
+                <p>Availability: 4.5 ★ Available</p>
+            </div>
+            <button class="book-appointment" onclick="window.location.href='appointment.html'">Book an appointment</button>
+        </div>
+
+
+        
+        <div class="doctor-card">
+            <img src="img/doctor5.jpeg" alt="Doctor 5">
+            <div class="doctor-info">
+                <p class="doctor-name">Dr. Rita Khan</p>
+                <p>Specialization: Adult Psychiatrists</p>
+                <p>Availability: 4.5 ★ Available</p>
+            </div>
+            <button class="book-appointment" onclick="window.location.href='appointment.html'">Book an appointment</button>
+        </div>
+
+    </section>
+
+</body>
+</html>
