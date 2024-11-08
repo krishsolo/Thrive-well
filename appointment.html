@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book an Appointment</title>
+    <link rel="stylesheet" href="style.css"> <!-- Add your CSS file -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f7fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        .booking-section {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #2575fc;
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin: 10px 0 5px;
+            font-size: 18px;
+            color: #333;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="date"],
+        select,
+        textarea {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+
+        button {
+            background-color: #2575fc;
+            color: white;
+            padding: 10px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #2a5298;
+        }
+
+        .price {
+            font-size: 20px;
+            color: #333;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 15% auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 60%;
+            max-width: 400px;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .modal-content h2 {
+            font-size: 28px;
+            color: #2575fc;
+            margin-bottom: 10px;
+        }
+
+        .modal-content p {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .modal-content button {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #2575fc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .modal-content button:hover {
+            background-color: #2a5298;
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Booking Section -->
+    <section class="booking-section">
+        <h1>Book Your Appointment</h1>
+        <p style="font-size: 18px; text-align: center;">
+            Please fill out the form below to book your appointment with one of our experienced psychiatrists.
+        </p>
+        
+        <form id="bookingForm">
+            <label for="name">Your Full Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="date">Preferred Appointment Date:</label>
+            <input type="date" id="date" name="date" required>
+
+            <label for="doctor">Choose a Doctor:</label>
+            <select id="doctor" name="doctor" required onchange="updatePrice()">
+                <option value="" disabled selected>Select a doctor</option>
+                <option value="dr-usman">Dr. Usman Yousuf - General Psychiatrists</option>
+                <option value="dr-angelia">Dr. Angelia - Addiction Psychiatrists</option>
+                <option value="dr-jen">Dr. Jen - General Psychiatrists</option>
+                <option value="dr-andrew">Dr. Andrew - Clinical Psychiatrists</option>
+                <option value="dr-rita">Dr. Rita Khan - Adult Psychiatrists</option>
+            </select>
+
+            <label for="message">Additional Message:</label>
+            <textarea id="message" name="message" rows="5" placeholder="Any additional information..."></textarea>
+
+            <!-- Price Display -->
+            <p class="price" id="priceDisplay">Appointment Price: Select a doctor to see the price</p>
+
+            <button type="submit">Confirm Appointment</button>
+        </form>
+    </section>
+
+    <!-- The Modal -->
+    <div id="confirmationModal" class="modal">
+        <div class="modal-content">
+            <h2>Appointment Booked!</h2>
+            <p>Thank you for booking your appointment. We look forward to seeing you soon.</p>
+            <button onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <script>
+        function updatePrice() {
+            // Get the selected doctor's value
+            const doctorSelect = document.getElementById("doctor");
+            const selectedDoctor = doctorSelect.value;
+
+            // Set the price for each doctor
+            let price = "";
+            switch (selectedDoctor) {
+                case "dr-usman":
+                    price = "$150";
+                    break;
+                case "dr-angelia":
+                    price = "$180";
+                    break;
+                case "dr-jen":
+                    price = "$160";
+                    break;
+                case "dr-andrew":
+                    price = "$200";
+                    break;
+                case "dr-rita":
+                    price = "$170";
+                    break;
+                default:
+                    price = "Select a doctor to see the price";
+            }
+
+            // Display the price
+            document.getElementById("priceDisplay").textContent = "Appointment Price: " + price;
+        }
+
+        // Handle form submission
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            showModal();
+        });
+
+        // Show modal popup
+        function showModal() {
+            document.getElementById("confirmationModal").style.display = "block";
+        }
+
+        // Close modal popup
+        function closeModal() {
+            document.getElementById("confirmationModal").style.display = "none";
+        }
+    </script>
+
+</body>
+</html>
