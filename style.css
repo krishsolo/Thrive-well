@@ -1,0 +1,274 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #f4f4f4;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo-title {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.title {
+    font-size: 24px;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+
+/* Navigation Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #6a11cb;
+}
+
+/* Sign-In Button */
+.sign-in-btn {
+    padding: 10px 20px;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.sign-in-btn:hover {
+    background: linear-gradient(to right, #2575fc, #6a11cb);
+}
+
+/* Main Section Styling */
+.main-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+}
+
+.main-section h1 {
+    font-size: 48px;
+    color: #333;
+}
+
+.main-section p {
+    font-size: 18px;
+    color: #777;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+.buttons button {
+    margin-right: 15px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn-signin {
+    background: #6a11cb;
+    color: white;
+}
+
+.btn-contact {
+    background: white;
+    border: 1px solid #6a11cb;
+    color: #6a11cb;
+}
+
+/* Image Section Styling */
+.image-section {
+    position: relative;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.person-image {
+    width: 450px;
+    height: auto;
+    border-radius: 15px;
+}
+
+.data-card {
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 200px;
+}
+
+.data-title {
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+}
+
+.data-value {
+    font-size: 16px;
+    color: #555;
+    margin-top: 5px;
+}
+
+/* Doctors Section Styling */
+.doctors-section {
+    padding: 50px;
+    background-color: #f9f9f9;
+}
+
+.partners img {
+    margin-right: 20px;
+}
+
+.doctors {
+    display: flex; /* Use flexbox to align doctor cards in a line */
+    justify-content: space-around; /* Space them out evenly */
+    margin-top: 20px; /* Add space above the doctors section */
+}
+
+.doctor-card {
+    background-color: rgb(250, 237, 237);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative; /* For positioning the frame */
+    margin: 0 10px; /* Margin between cards */
+}
+
+.doctor-card img {
+    border-radius: 10px; /* Keep the rectangular shape */
+    width: 300px; /* Increase image size */
+    height: 300px; /* Maintain aspect ratio */
+    border: 2px solid #040107; /* Add frame color */
+    padding: 5px; /* Space between image and frame */
+    background-color: rgb(238, 250, 247); /* Frame background color */
+}
+
+.doctor-name {
+    font-size: 1.5em; /* Attractive doctor name font size */
+    font-weight: bold;
+    color: #070b0f; /* Blue color */
+    margin: 10px 0; /* Margin for spacing */
+}
+
+.availability {
+    font-size: 1.2em; /* Size for availability */
+    color: #923206; /* Green for available */
+}
+
+.book-appointment {
+    background-color: #0553a7; /* Blue background */
+    color: white; /* White text */
+    border: none; /* No border */
+    padding: 10px 20px; /* Padding for button */
+    border-radius: 5px; /* Rounded button */
+    cursor: pointer; /* Pointer on hover */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+.book-appointment:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+.collaboration-banner {
+    background-color: #120258; /* Dark background for contrast */
+    color: white; /* Text color */
+    display: flex; /* Flexbox for alignment */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+    padding: 25px 30px; /* Increase padding for better spacing */
+    margin-top: -30px; /* Moves the banner up */
+    margin-bottom: 40px; /* Space below the banner */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Subtle shadow for depth */
+}
+
+.banner-logo {
+    width: 60px; /* Increase logo size */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 20px; /* More space to the right of the logo */
+}
+
+.collaboration-banner p {
+    font-size: 26px; /* Increased font size */
+    margin: 0 25px; /* Larger margin around the text */
+    font-weight: bold; /* Keep text bold */
+    letter-spacing: 1.5px; /* Slightly more letter spacing */
+}
+
+.partner-logos {
+    display: flex; /* Keep logos in a row */
+    margin-left: 20px; /* Margin from the main text */
+}
+
+.partner-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 25px; /* More space between logos */
+}
+
+.partner-logos img {
+    width: 65px; /* Slightly larger partner logos */
+    height: auto;
+    border-radius: 8px; /* More rounded corners */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added shadow effect */
+}
+
+.partner-logos img:hover {
+    transform: scale(1.15); /* Slightly bigger pop effect */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+}
+
+.partner-logo p {
+    margin-top: 10px; /* Space above the text */
+    font-size: 15px; /* Slightly bigger font size */
+    text-align: center; /* Center the text */
+    color: white;
+}
+
+.view-all {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #6a11cb;
+}
