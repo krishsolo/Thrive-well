@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Wellness Plan</title>
+    <style>
+        /* Basic Styling for Wellness Plan Section */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f7fa;
+        }
+
+        
+
+        .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #f4f4f4;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo-title {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.title {
+    font-size: 24px;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+
+/* Navigation Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #6a11cb;
+}
+
+Sign-In Button
+.sign-in-btn {
+    padding: 10px 20px;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.sign-in-btn:hover {
+    background: linear-gradient(to right, #2575fc, #6a11cb);
+}
+
+
+        /* Wellness Plan Section */
+        .wellness-plan-section {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            text-align: center;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-section {
+            background-color: #f0f4f8;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 18px;
+            color: #333;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #2575fc;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #2a5298;
+        }
+
+        .goals-display-section {
+            text-align: left;
+            margin-top: 40px;
+        }
+
+        #goalsList {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        #goalsList li {
+            background-color: #f0f4f8;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar Section -->
+    <header>
+        <nav class="navbar">
+            <div class="logo-title">
+                <img src="img/logo.jpeg" alt="Logo" class="logo">
+                <h1>Thrive Well</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="training.html">Training</a></li>
+                <li><a href="selfhelp.html">Self-Help Resources</a></li>
+                <li><a href="wellness.html">Personal Wellness Plan</a></li>
+            </ul>
+            <button class="sign-in-btn" onclick="window.location.href='signin.html'">Sign In</button>
+        </nav>
+    </header>
+
+    <!-- Main Wellness Plan Section -->
+    <section class="wellness-plan-section">
+        <h1 style="text-align: center; color: #2a5298; font-size: 40px;">
+            Build Your Personal Wellness Plan
+        </h1>
+        <p style="font-size: 18px; text-align: center; margin-bottom: 40px;">
+            A Personal Wellness Plan is a blueprint for achieving your mental, emotional, and physical goals. Customize your plan by setting achievable milestones and using our helpful resources.
+        </p>
+
+        <!-- Wellness Goals Form -->
+        <div class="form-section">
+            <h2 style="color: #2575fc;">Set Your Wellness Goals</h2>
+            <form id="wellnessForm">
+                <label for="goal">Wellness Goal:</label>
+                <input type="text" id="goal" name="goal" required>
+
+                <label for="date">Target Date:</label>
+                <input type="date" id="date" name="date" required>
+
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" rows="4" required></textarea>
+
+                <button type="button" id="addGoalBtn">Add Goal</button>
+            </form>
+        </div>
+
+        <!-- Display Goals -->
+        <div class="goals-display-section">
+            <h2 style="color: #2575fc;">Your Wellness Goals</h2>
+            <ul id="goalsList"></ul>
+        </div>
+    </section>
+
+    <script>
+        document.getElementById('addGoalBtn').addEventListener('click', function() {
+            // Get form input values
+            const goal = document.getElementById('goal').value;
+            const date = document.getElementById('date').value;
+            const description = document.getElementById('description').value;
+
+            if (goal && date && description) {
+                // Create a new list item
+                const li = document.createElement('li');
+                li.innerHTML = `<strong>Goal:</strong> ${goal}<br>
+                                <strong>Target Date:</strong> ${date}<br>
+                                <strong>Description:</strong> ${description}<br><br>`;
+                
+                // Add the new goal to the list
+                document.getElementById('goalsList').appendChild(li);
+
+                // Clear the form
+                document.getElementById('wellnessForm').reset();
+            } else {
+                alert("Please fill out all fields before adding a goal.");
+            }
+        });
+    </script>
+</body>
+</html>
